@@ -22,6 +22,12 @@
                 </div>
             </div>
 
+            <div>
+                <x-nav-link :href="route('listings')" :active="request()->routeIs('listings')">
+                    {{ __('My products') }}
+                </x-nav-link>
+            </div>
+
             <!-- Settings Dropdown -->
             <div class="hidden sm:flex sm:items-center sm:ms-6">
                 <x-dropdown align="right" width="48">
