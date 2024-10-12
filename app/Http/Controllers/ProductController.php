@@ -25,4 +25,31 @@ class ProductController extends Controller
     public function show(Product $product){
         return view('products.show', ['product' => $product]);
     }
+
+    public function edit(Product $product){
+        return view('products.edit', ['product' => $product]);
+    }
+
+    public function update(Product $product){
+        request()->validate([
+            'name' => ['required', 'min:3'],
+            'description' => ['required', 'min:5'],
+            'img_url' => ['required'],
+            'quantity' => ['required'],
+            'price' => ['required'],
+        ]);
+        $product->update([
+            'name' => request('name'),
+            'description' => request('description'),
+            'img_url' => request('img_url'),
+            'quantity' => request('quantity'),
+            'price' => request('price'),
+        ]);
+
+        return redirect('/products/'.$product->id);
+    }
+
+    //TODO: 
+    //show form error messages
+    //allow only the creator to edit his content
 }

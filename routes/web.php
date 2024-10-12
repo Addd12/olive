@@ -21,5 +21,7 @@ Route::middleware('auth')->group(function () {
 Route::get('/listings', [ProductController::class, 'listings'])->middleware('auth')->name('listings');
 Route::get('/products', [ProductController::class, 'index'])->name('products');
 Route::get('/products/{product}', [ProductController::class, 'show']);
+Route::get('/products/edit/{product}', [ProductController::class, 'edit']);
+Route::patch('/products/{product}', [ProductController::class, 'update']);
 
 require __DIR__.'/auth.php';
