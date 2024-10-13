@@ -35,8 +35,8 @@ class ProductController extends Controller
             'name' => ['required', 'min:3'],
             'description' => ['required', 'min:5'],
             'img_url' => ['required'],
-            'quantity' => ['required'],
-            'price' => ['required'],
+            'quantity' => ['required', 'numeric', 'min: 0'],
+            'price' => 'required | numeric | min:0',
         ]);
         $product->update([
             'name' => request('name'),
