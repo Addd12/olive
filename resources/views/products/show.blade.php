@@ -1,7 +1,9 @@
 <x-app-layout>
     <div class="bg-white">
         <div class="pt-6">
+            @can('update', $product)
             <a href="/products/edit/{{$product->id}}" class="inline-flex items-center px-4 py-2 bg-gray-800 dark:bg-gray-200 border border-transparent rounded-md text-white">Edit</a>
+            @endcan
             <!-- Image gallery -->
             <div class="mx-auto mt-6 max-w-2xl sm:px-6 lg:grid lg:max-w-7xl lg:grid-cols-3 lg:gap-x-8 lg:px-8">
                 <div class="aspect-h-4 aspect-w-3 hidden overflow-hidden rounded-lg lg:block">

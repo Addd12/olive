@@ -38,6 +38,7 @@ class ProductController extends Controller
             'quantity' => ['required', 'numeric', 'min: 0'],
             'price' => 'required | numeric | min:0',
         ]);
+
         $product->update([
             'name' => request('name'),
             'description' => request('description'),
@@ -49,7 +50,4 @@ class ProductController extends Controller
         return redirect('/products/'.$product->id);
     }
 
-    //TODO: 
-    //show form error messages
-    //allow only the creator to edit his content
 }
