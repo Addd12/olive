@@ -1,7 +1,12 @@
 <x-app-layout>
     <div class="bg-white">
         <div class="mx-auto max-w-2xl px-4 py-16 sm:px-6 sm:py-24 lg:max-w-7xl lg:px-8">
-            <h2 class="py-2 text-center text-2xl">Products</h2>
+            <div class="flex justify-between">
+                <h2 class="text-2xl">Products</h2>
+                @if (Auth::user())
+                <a href="/products/create" class="inline-flex items-center px-4 py-2 bg-gray-800 dark:bg-gray-200 border border-transparent rounded-md text-white">Add product</a>
+                @endif
+            </div>
 
             <div class="grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 xl:gap-x-8">
                 @foreach ($products as $product)             

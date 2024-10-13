@@ -2,7 +2,7 @@
     <div class="bg-white">
         <div class="pt-6">
             @can('update', $product)
-            <a href="/products/edit/{{$product->id}}" class="inline-flex items-center px-4 py-2 bg-gray-800 dark:bg-gray-200 border border-transparent rounded-md text-white">Edit</a>
+                <a href="/products/edit/{{$product->id}}" class="inline-flex items-center px-4 py-2 bg-gray-800 dark:bg-gray-200 border border-transparent rounded-md text-white">Edit</a>
             @endcan
             <!-- Image gallery -->
             <div class="mx-auto mt-6 max-w-2xl sm:px-6 lg:grid lg:max-w-7xl lg:grid-cols-3 lg:gap-x-8 lg:px-8">
