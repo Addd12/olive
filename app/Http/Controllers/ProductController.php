@@ -26,6 +26,37 @@ class ProductController extends Controller
         return view('products.create');
     }
 
+    public function store(Product $product){
+        request()->validate([
+            'name' => ['required', 'min:3'],
+            'description' => ['required', 'min:5'],
+            'img_url' => ['required'],
+            'quantity' => ['required', 'numeric', 'min: 0'],
+            'price' => 'required | numeric | min:0',
+        ]);
+        $user_id = Auth::user()->id;
+        // $product = new Product([
+        //     'user_id' => $user_id,
+        //     'name' => request('name'),
+        //     'description' => request(key: 'description'),
+        //     'img_url' => request('img_url'),
+        //     'quantity' => request('quantity'),
+        //     'price' => request('price'),
+        // ]);
+        // $product->save();
+
+        Product::create([
+            'user_id' => $user_id,
+            'name' => request('name'),
+            'description' => request(key: 'description'),
+            'img_url' => request('img_url'),
+            'quantity' => request('quantity'),
+            'price' => request('price'),
+        ]);
+
+        return redirect('/products');
+    }
+
     public function show(Product $product){
         return view('products.show', ['product' => $product]);
     }
