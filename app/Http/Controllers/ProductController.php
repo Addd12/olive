@@ -84,5 +84,8 @@ class ProductController extends Controller
 
         return redirect('/products/'.$product->id);
     }
-
+    public function destroy(Product $product){
+        $product->delete();
+        return redirect('/products');
+    }
 }
