@@ -14,6 +14,12 @@ export default {
             gridTemplateRows: {
                 '[auto,auto,1fr]': 'auto auto 1fr',
             },
+            colors: {
+                'olive-green': '#435103',
+                'sage-green': '#A8AE84',
+                'black-eerie': '#1c221f',
+                'dark-green': '#303a11'
+            },
             fontFamily: {
                 sans: ['Figtree', ...defaultTheme.fontFamily.sans],
             },

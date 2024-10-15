@@ -1,4 +1,4 @@
-<nav class="bg-gray-800">
+<nav class="bg-sage-green">
     <div class="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
         <div class="relative flex h-16 items-center justify-between">
             <div class="absolute inset-y-0 left-0 flex items-center sm:hidden">
@@ -29,53 +29,43 @@
             </div>
             <div class="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
                 <div class="flex flex-shrink-0 items-center">
-                    <img class="h-8 w-auto" src="https://tailwindui.com/plus/img/logos/mark.svg?color=indigo&shade=500"
-                        alt="Your Company">
+                    <a href="/">
+                        <img class="h-8 w-auto" src="{{Vite::asset('resources/img/olive-logo.png')}}"
+                            alt="Your Company">
+                    </a>
                 </div>
                 <div class="hidden sm:ml-6 sm:block">
                     <div class="flex space-x-4">
-                        <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
-                        <a href="/" class="rounded-md bg-gray-900 px-3 py-2 text-sm font-medium text-white"
-                            aria-current="page">Home</a>
-                        <a href="/products"
-                            class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Products</a>
+                        <x-hyperlink-button href="/">Home</x-hyperlink-button>
+                        <x-hyperlink-button href="/products">Products</x-hyperlink-button>
                     </div>
                 </div>
             </div>
             @if (Route::has('login'))
                 @auth
-                    <a href="{{ url('/dashboard') }}"
-                        class="rounded-md px-3 py-2 text-white ring-1 ring-transparent transition hover:text-white/70 focus:outline-none focus-visible:ring-[#FF2D20] dark:text-white dark:hover:text-white/80 dark:focus-visible:ring-white">
-                        Dashboard
-                    </a>
-                    <a href="{{ url('/listings') }}"
-                        class="rounded-md px-3 py-2 text-white ring-1 ring-transparent transition hover:text-white/70 focus:outline-none focus-visible:ring-[#FF2D20] dark:text-white dark:hover:text-white/80 dark:focus-visible:ring-white">
-                        My products
-                    </a>
-                    <a href="{{ url('/profile') }}"
-                        class="rounded-md px-3 py-2 text-white ring-1 ring-transparent transition hover:text-white/70 focus:outline-none focus-visible:ring-[#FF2D20] dark:text-white dark:hover:text-white/80 dark:focus-visible:ring-white">
-                        Profile
-                    </a>
+                    <x-hyperlink-button href="/dashboard">Dashboard</x-hyperlink-button>
+                    <x-hyperlink-button href="/listings">Listings</x-hyperlink-button>
+                    <x-hyperlink-button href="/profile">Profile</x-hyperlink-button>
                     <!-- Authentication -->
                     <form method="POST" action="{{ route('logout') }}">
-                            @csrf
+                        @csrf
 
-                            <a href="{{route('logout')}}"
-                                class="rounded-md px-3 py-2 text-white ring-1 ring-transparent transition hover:text-white/70 focus:outline-none focus-visible:ring-[#FF2D20] dark:text-white dark:hover:text-white/80 dark:focus-visible:ring-white"
-                                onclick="event.preventDefault();
-                                this.closest('form').submit();">
-                                {{ __('Log Out') }}
-                            </a>
-                        </form>
+                        <a href="{{route('logout')}}"
+                            class="rounded-md px-3 py-2 text-black-eerie ring-1 ring-transparent transition hover:text-dark-green focus:outline-none focus-visible:ring-[#FF2D20] dark:text-white dark:hover:text-white/80 dark:focus-visible:ring-white"
+                            onclick="event.preventDefault();
+                                        this.closest('form').submit();">
+                            {{ __('Log Out') }}
+                        </a>
+                    </form>
                 @else
                     <a href="{{ route('login') }}"
-                        class="rounded-md px-3 py-2 text-white ring-1 ring-transparent transition hover:text-white/70 focus:outline-none focus-visible:ring-[#FF2D20] dark:text-white dark:hover:text-white/80 dark:focus-visible:ring-white">
+                        class="rounded-md px-3 py-2 text-black-eerie ring-1 ring-transparent transition hover:text-dark-green focus:outline-none focus-visible:ring-[#FF2D20] dark:text-white dark:hover:text-white/80 dark:focus-visible:ring-white">
                         Log in
                     </a>
 
                     @if (Route::has('register'))
                         <a href="{{ route('register') }}"
-                            class="rounded-md px-3 py-2 text-white ring-1 ring-transparent transition hover:text-white/70 focus:outline-none focus-visible:ring-[#FF2D20] dark:text-white dark:hover:text-white/80 dark:focus-visible:ring-white">
+                            class="rounded-md px-3 py-2 text-black-eerie ring-1 ring-transparent transition hover:text-dark-green focus:outline-none focus-visible:ring-[#FF2D20] dark:text-white dark:hover:text-white/80 dark:focus-visible:ring-white">
                             Register
                         </a>
                     @endif
