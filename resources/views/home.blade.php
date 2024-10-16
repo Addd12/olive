@@ -18,7 +18,40 @@
 <body>
     @include("layouts.navigation")
     <main>
-        <h1>home page</h1>
+        <h1 class="py-3 text-4xl text-center">Olive</h1>
+        <div class="grid grid-cols-3 gap-3">
+            <div class="px-2 py-3 m-4">
+                <div class="py-6">
+                    <h2 class="text-2xl">Extra Virgin Quality</h2>
+                    <li>Made from the first pressing of olives, ensuring the purest and highest quality.</li>
+                </div>
+                <div class="py-6">
+                    <h2 class="text-2xl">Cold-Pressed Extraction</h2>
+                    <li>Extracted without heat to preserve natural flavors and nutrients.</li>
+                </div>
+                <div class="py-6">
+                    <h2 class="text-2xl">Rich in Antioxidants</h2>
+                    <li>Contains beneficial compounds like polyphenols and vitamin E, promoting overall health.</li>
+                </div>
+            </div>
+            <div>
+                <img src="{{Vite::asset('resources/img/olive-oil-bottle.png')}}" alt="">
+            </div>
+            <div class="px-2 py-3 m-4">
+                <div class="py-6">
+                    <h2 class="text-2xl">Extra Virgin Quality</h2>
+                    <li>Made from the first pressing of olives, ensuring the purest and highest quality.</li>
+                </div>
+                <div class="py-6">
+                    <h2 class="text-2xl">Cold-Pressed Extraction</h2>
+                    <li>Extracted without heat to preserve natural flavors and nutrients.</li>
+                </div>
+                <div class="py-6">
+                    <h2 class="text-2xl">Rich in Antioxidants</h2>
+                    <li>Contains beneficial compounds like polyphenols and vitamin E, promoting overall health.</li>
+                </div>
+            </div>
+        </div>
     </main>
 </body>
 
