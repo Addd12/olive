@@ -1,10 +1,10 @@
 <x-app-layout>
     <div class="bg-white">
         <div class="mx-auto max-w-2xl px-4 py-16 sm:px-6 sm:py-24 lg:max-w-7xl lg:px-8">
-            <div class="flex justify-between">
+            <div class="flex justify-between mb-6">
                 <h2 class="text-2xl">Products</h2>
                 @if (Auth::user())
-                <a href="/products/create" class="inline-flex items-center px-4 py-2 bg-gray-800 dark:bg-gray-200 border border-transparent rounded-md text-white">Add product</a>
+                    <x-hyperlink-button href="/products/create">Add product</x-hyperlink-button>
                 @endif
             </div>
 

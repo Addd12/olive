@@ -1,6 +1,6 @@
 <x-app-layout>
     <h1 class="py-2 text-center text-2xl">Create new product</h1>
-    <div class="flex flex-col items-center py-6 border-2 border-gray-300 rounded-md">
+    <div class="mx-auto max-w-2xl flex flex-col items-center py-6 border-2 border-gray-300 rounded-md">
         <form action="/products" method="POST">
             @csrf
             <div class="py-2">
@@ -28,8 +28,7 @@
                 <x-text-input name="img_url" type="file" />
                 <x-input-error :messages="$errors->get('img_url')" />
             </div>
-            <button type="submit"
-                class="inline-flex items-center px-4 py-2 bg-gray-800 dark:bg-gray-200 border border-transparent rounded-md text-white">Save</button>
+            <x-primary-button class="mt-3">Save</x-primary-button>
         </form>
     </div>
 

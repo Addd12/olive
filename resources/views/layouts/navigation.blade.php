@@ -36,16 +36,16 @@
                 </div>
                 <div class="hidden sm:ml-6 sm:block">
                     <div class="flex space-x-4">
-                        <x-hyperlink-button href="/">Home</x-hyperlink-button>
-                        <x-hyperlink-button href="/products">Products</x-hyperlink-button>
+                        <x-nav-link href="/">Home</x-nav-link>
+                        <x-nav-link href="/products">Products</x-nav-link>
                     </div>
                 </div>
             </div>
             @if (Route::has('login'))
                 @auth
-                    <x-hyperlink-button href="/dashboard">Dashboard</x-hyperlink-button>
-                    <x-hyperlink-button href="/listings">Listings</x-hyperlink-button>
-                    <x-hyperlink-button href="/profile">Profile</x-hyperlink-button>
+                    <x-nav-link href="/dashboard">Dashboard</x-nav-link>
+                    <x-nav-link href="/listings">Listings</x-nav-link>
+                    <x-nav-link href="/profile">Profile</x-nav-link>
                     <!-- Authentication -->
                     <form method="POST" action="{{ route('logout') }}">
                         @csrf

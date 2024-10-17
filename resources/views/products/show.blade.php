@@ -4,8 +4,7 @@
             <div class="flex justify-end px-6 mr-9">
                 @can('update', $product)
                     <div class="px-3">
-                        <a href="/products/edit/{{$product->id}}"
-                            class="inline-flex items-center px-4 py-2 bg-gray-800 dark:bg-gray-200 border border-transparent rounded-md text-white">Edit</a>
+                        <x-hyperlink-button href="/products/edit/{{$product->id}}">Edit</x-hyperlink-button>
                     </div>
                     <div>
                         <form method="POST" action="/products/{{$product->id}}">

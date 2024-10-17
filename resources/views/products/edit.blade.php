@@ -27,6 +27,6 @@
             <x-text-input id="img_url" name="img_url" type="file" required/>
             <x-input-error :messages="$errors->get('img_url')"/>
         </div>
-        <button type="submit" class="inline-flex items-center px-4 py-2 bg-gray-800 dark:bg-gray-200 border border-transparent rounded-md text-white">Update</button>
+        <x-primary-button class="mt-3">Edit</x-primary-button>
     </form>
 </x-app-layout>
