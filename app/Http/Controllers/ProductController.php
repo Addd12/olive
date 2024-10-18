@@ -10,14 +10,14 @@ use Illuminate\Support\Facades\Auth;
 class ProductController extends Controller
 {
     public function index(){
-        $products = Product::all();
+        $products = Product::latest()->paginate(12);
         return view('products.index', ['products' => $products]);
     }
 
     public function listings(){
         $user = Auth::user();
         //dd($user->id);
-        $products = Product::all()->where('user_id', $user->id);
+        $products = Product::latest()->where('user_id', $user->id)->paginate(8);
 
         return view('products.index', ['products' => $products]);
     }
