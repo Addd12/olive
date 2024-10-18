@@ -35,21 +35,13 @@ class ProductController extends Controller
             'price' => 'required | numeric | min:0',
         ]);
         $user_id = Auth::user()->id;
-        // $product = new Product([
-        //     'user_id' => $user_id,
-        //     'name' => request('name'),
-        //     'description' => request(key: 'description'),
-        //     'img_url' => request('img_url'),
-        //     'quantity' => request('quantity'),
-        //     'price' => request('price'),
-        // ]);
-        // $product->save();
-
+        //stores the uploaded image in the local folder in storage/images
+        $img_path = request()->img_url->store('images');
         Product::create([
             'user_id' => $user_id,
             'name' => request('name'),
             'description' => request(key: 'description'),
-            'img_url' => request('img_url'),
+            'img_url' => $img_path, //set the image url to the img path
             'quantity' => request('quantity'),
             'price' => request('price'),
         ]);
@@ -73,7 +65,7 @@ class ProductController extends Controller
             'quantity' => ['required', 'numeric', 'min: 0'],
             'price' => 'required | numeric | min:0',
         ]);
-
+        
         $product->update([
             'name' => request('name'),
             'description' => request('description'),

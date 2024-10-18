@@ -1,7 +1,7 @@
 <x-app-layout>
     <h1 class="py-2 text-center text-2xl">Create new product</h1>
     <div class="mx-auto max-w-2xl flex flex-col items-center py-6 border-2 border-gray-300 rounded-md">
-        <form action="/products" method="POST">
+        <form action="/products" method="POST" enctype="multipart/form-data">
             @csrf
             <div class="py-2">
                 <x-input-label for="name" value="Product name" />

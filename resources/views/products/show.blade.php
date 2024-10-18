@@ -18,7 +18,7 @@
             <!-- Product information -->
             <div class="mx-auto my-6 sm:px-6 lg:grid lg:max-w-6xl lg:grid-cols-2 lg:gap-x-8 lg:px-8">
                 <div class="aspect-h-5 aspect-w-4 lg:aspect-h-4 lg:aspect-w-3 sm:overflow-hidden sm:rounded-lg">
-                    <img src="https://tailwindui.com/plus/img/ecommerce-images/product-page-02-featured-product-shot.jpg"
+                    <img src="{{asset('storage/'.$product->img_url)}}"
                         alt="Model wearing plain white basic tee." class="h-full w-full object-cover object-center">
                 </div>
                 <div>
