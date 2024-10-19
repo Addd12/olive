@@ -21,7 +21,7 @@ class ProductFactory extends Factory
             'user_id' => User::factory(),
             'name' => fake()->word(),
             'description' => fake()->text(),
-            'img_url' => fake()->imageUrl(),
+            'img_url' => fake()->image('public/storage', 640, 480, null, false),
             'quantity' => fake()->numberBetween(0, 1000),
             'price' => fake()->numberBetween(1, 100)
         ];

@@ -30,7 +30,7 @@
             <div class="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
                 <div class="flex flex-shrink-0 items-center">
                     <a href="/">
-                        <img class="h-8 w-auto" src="{{Vite::asset('resources/img/olive-logo.png')}}"
+                        <img class="h-8 w-auto" src="{{Vite::asset('resources/img/olive-cr.png')}}"
                             alt="Your Company">
                     </a>
                 </div>
