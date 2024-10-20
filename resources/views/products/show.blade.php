@@ -10,7 +10,8 @@
                         <form method="POST" action="/products/{{$product->id}}">
                             @method('DELETE')
                             @csrf
-                            <button class="inline-flex items-center px-4 py-2 bg-red-800 dark:bg-red-200 border border-transparent rounded-md text-white">Delete</button>
+                            <button
+                                class="inline-flex items-center px-4 py-2 bg-red-800 dark:bg-red-200 border border-transparent rounded-md text-white">Delete</button>
                         </form>
                     </div>
                 @endcan
@@ -18,10 +19,10 @@
             <!-- Product information -->
             <div class="mx-auto my-6 sm:px-6 lg:grid lg:max-w-6xl lg:grid-cols-2 lg:gap-x-8 lg:px-8">
                 <div class="aspect-h-5 aspect-w-4 lg:aspect-h-4 lg:aspect-w-3 sm:overflow-hidden sm:rounded-lg">
-                    <img src="{{asset('storage/'.$product->img_url)}}"
-                        alt="Model wearing plain white basic tee." class="h-full w-full object-cover object-center">
+                    <img src="{{asset('storage/' . $product->img_url)}}" alt="Model wearing plain white basic tee."
+                        class="h-full w-full object-cover object-center">
                 </div>
-                <div>
+                <div class="grid grid-rows-3">
                     <div class="flex justify-between">
                         <div class="">
                             <h1 class="text-2xl font-bold tracking-tight text-gray-900 sm:text-3xl">{{$product->name}}
@@ -79,8 +80,8 @@
                             </div>
                         </div>
 
+                        <!-- Description -->
                         <div class="py-10 lg:col-span-2 lg:col-start-1 lg:pb-16 lg:pr-8 lg:pt-6">
-                            <!-- Description -->
                             <div>
                                 <h3 class="sr-only">Description</h3>
 
@@ -108,8 +109,9 @@
                                 </div>
                             </div>
                         </div>
+                    </div>
+                    <div class="">
                         <form class="mt-10">
-
                             <!-- Sizes -->
                             <div class="mt-10">
                                 <div class="flex items-center justify-between">
@@ -140,9 +142,9 @@
                                             <input type="radio" name="size-choice" value="1 L" class="sr-only">
                                             <span>1 L</span>
                                             <!--
-                    Active: "border", Not Active: "border-2"
-                    Checked: "border-indigo-500", Not Checked: "border-transparent"
-                  -->
+                                                Active: "border", Not Active: "border-2"
+                                                Checked: "border-indigo-500", Not Checked: "border-transparent"
+                                            -->
                                             <span class="pointer-events-none absolute -inset-px rounded-md"
                                                 aria-hidden="true"></span>
                                         </label>
@@ -151,10 +153,6 @@
                                             class="group relative flex cursor-pointer items-center justify-center rounded-md border bg-white px-4 py-3 text-sm font-medium uppercase text-gray-900 shadow-sm hover:bg-gray-50 focus:outline-none sm:flex-1 sm:py-6">
                                             <input type="radio" name="size-choice" value="1.5 L" class="sr-only">
                                             <span>1.5 L</span>
-                                            <!--
-                    Active: "border", Not Active: "border-2"
-                    Checked: "border-indigo-500", Not Checked: "border-transparent"
-                  -->
                                             <span class="pointer-events-none absolute -inset-px rounded-md"
                                                 aria-hidden="true"></span>
                                         </label>
@@ -163,10 +161,6 @@
                                             class="group relative flex cursor-pointer items-center justify-center rounded-md border bg-white px-4 py-3 text-sm font-medium uppercase text-gray-900 shadow-sm hover:bg-gray-50 focus:outline-none sm:flex-1 sm:py-6">
                                             <input type="radio" name="size-choice" value="2 L" class="sr-only">
                                             <span>2 L</span>
-                                            <!--
-                    Active: "border", Not Active: "border-2"
-                    Checked: "border-indigo-500", Not Checked: "border-transparent"
-                  -->
                                             <span class="pointer-events-none absolute -inset-px rounded-md"
                                                 aria-hidden="true"></span>
                                         </label>
