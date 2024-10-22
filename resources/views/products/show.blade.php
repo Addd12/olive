@@ -10,8 +10,7 @@
                         <form method="POST" action="/products/{{$product->id}}">
                             @method('DELETE')
                             @csrf
-                            <button
-                                class="inline-flex items-center px-4 py-2 bg-red-800 dark:bg-red-200 border border-transparent rounded-md text-white">Delete</button>
+                            <x-danger-button>Delete</x-danger-button>
                         </form>
                     </div>
                 @endcan
